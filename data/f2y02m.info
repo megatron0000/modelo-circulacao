@@ -1,0 +1,9 @@
+Source: record fantasia/f2y02
+val has 1 row (signal) and 3330 columns (samples/signal)
+Duration:     0:10
+Sampling frequency: 333 Hz  Sampling interval: 0.003003003003 sec
+Row	Signal	Gain	Base	Units
+1	BP	819.2	0	mV
+
+To convert from raw units to the physical units shown
+above, subtract 'base' and divide by 'gain'.
