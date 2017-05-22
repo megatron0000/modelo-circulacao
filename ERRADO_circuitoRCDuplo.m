@@ -6,8 +6,8 @@ timeline = 0:dt:endtime;
 lastIndex = floor(endtime/dt + 1);
 
 
-% Pressão ventricular (esquerda)
-US = arrayfun(@(t) HeartElastance(t), timeline) * 40000 - 11000;
+% PressÃ£o ventricular (esquerda)
+US = arrayfun(@(t) ElastanciaCoracao(t), timeline) * 40000 - 11000;
 
 % Resistência da aorta
 RA = 1.8  * 10^7;
@@ -29,9 +29,9 @@ UC2 = zeros(lastIndex,2); UC2(1) = 6600;
 
 
 for index = 1 : lastIndex - 1
-    ID = (US(index) - UC1(index)) / RD;
-    IA = (UC1(index) - UC2(index)) / RA;
     IS = UC2(index) / RS;
+    IA = (UC1(index) - UC2(index)) / RA;
+    ID = (US(index) - UC1(index)) / RD;
     if (ID < 0)
         % ID = 0;
         RD = RDClosed;
@@ -47,5 +47,5 @@ end
 figure();
 plot(timeline, UC1 * 760 / 10^5, timeline, UC2 * 760 / 10^5, timeline, US * 760 / 10^5);
 xlabel('Tempo (s)');
-ylabel('Pressão (mmHg)');
-legend('Aorta', 'Sistema', 'Ventrículo esquerdo');
+ylabel('Pressao (mmHg)');
+legend('Aorta', 'Sistema', 'Ventriculo esquerdo');

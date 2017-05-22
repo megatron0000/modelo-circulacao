@@ -1,14 +1,14 @@
-function elastance = HeartElastance(t)
+function elastance = ElastanciaCoracao(t)
 
-% Per√≠odo da batida
+% PerÌodo da batida
 T = 1;
-% Tempo da s√≠stole
+% Tempo da sÌstole
 TS = 0.3 * sqrt(T);
-% Tempo da s√≠stole √† di√°stole
+% Tempo da sÌstole ‡ di·stole
 TD = 0.5 * TS;
-% Elast√¢ncia na s√≠stole
+% Elast‚ncia na sÌstole
 ES = 0.721;
-% Elast√¢ncia na di√°stole (carteado)
+% Elast‚ncia na di·stole (carteado)
 ED = 0.300;
 
 % De tempo absoluto para tempo relativo ao ciclo
